@@ -13,7 +13,8 @@ const handleSubmit = (submit, props, valid, asyncValidate, fields) => {
     syncErrors,
     touch,
     values,
-    persistentSubmitErrors
+    persistentSubmitErrors,
+    manualSubmit,
   } = props
 
   touch(...fields) // mark all fields as touched
@@ -68,6 +69,9 @@ const handleSubmit = (submit, props, valid, asyncValidate, fields) => {
           }
         )
       } else {
+        if (manualSubmit) {
+          return result
+        }
         setSubmitSucceeded()
         if (onSubmitSuccess) {
           onSubmitSuccess(result, dispatch, props)

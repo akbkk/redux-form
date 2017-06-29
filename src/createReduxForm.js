@@ -94,6 +94,7 @@ const createReduxForm = structure => {
       getFormState: state => getIn(state, 'form'),
       pure: true,
       forceUnregisterOnUnmount: false,
+      manualSubmit: false,
       ...initialConfig
     }
 
@@ -654,6 +655,7 @@ const createReduxForm = structure => {
         form: PropTypes.string.isRequired,
         initialValues: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
         getFormState: PropTypes.func,
+        manualSubmit: PropTypes.bool,
         onSubmitFail: PropTypes.func,
         onSubmitSuccess: PropTypes.func,
         propNameSpace: PropTypes.string,
