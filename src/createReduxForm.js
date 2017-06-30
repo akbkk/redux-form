@@ -574,6 +574,7 @@ const createReduxForm = structure => {
             initialValues,
             invalid,
             keepDirtyOnReinitialize,
+            manualSubmit,
             pristine,
             propNamespace,
             registeredFields,
